@@ -11,8 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin:
-      "https://vercel.com/md-rabiuls-projects/waffle-backend/5QKMi9BwdhzkQsY8qvDLnfTKGXd3",
+    origin: "waffle-backend-git-main-md-rabiuls-projects.vercel.app",
     methods: ["POST", "GET", "UPDATE", "DELETE"],
     credentials: true,
   })
