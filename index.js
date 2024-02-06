@@ -10,7 +10,8 @@ import router from "./appRoute.js";
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173/", // Adjust the origin as needed
+  origin: "http://localhost:5173/",
+  
 };
 
 app.use(cors(corsOptions));
