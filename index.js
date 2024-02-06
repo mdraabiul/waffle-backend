@@ -17,7 +17,7 @@ app.use(morgan("tiny"));
 // routes
 app.use("/", router);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`server is running on http://localhost:${port}`);
 });
