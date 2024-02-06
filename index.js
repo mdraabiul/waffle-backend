@@ -8,9 +8,8 @@ import db from "./db.js";
 import router from "./appRoute.js";
 
 const app = express();
-app.options('*', cors()) // 
 
-app.use(cors(corsOptions));
+app.use(cors({origin:"*"}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -21,5 +20,5 @@ app.use("/", router);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on ${port}`);
 });
