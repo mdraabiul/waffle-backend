@@ -9,12 +9,11 @@ import router from "./appRoute.js";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "*",
-    methods : ["POST", "GET", "UPDATE", "DELETE"]
-  })
-);
+const corsOptions = {
+  origin: "http://localhost:5173/", // Adjust the origin as needed
+};
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
