@@ -9,7 +9,12 @@ import router from "./appRoute.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(morgan("tiny"));
@@ -19,5 +24,5 @@ app.use("/", router);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-  console.log(`server is running on http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
