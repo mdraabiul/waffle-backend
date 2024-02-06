@@ -106,11 +106,9 @@ router.post("/upload/delete", async (req, res) => {
       return res.status(404).json({ message: "File not found" });
     }
 
-    // Assuming you have fileId as a unique identifier for the file
     const deletedFile = await File.findByIdAndDelete(fileId);
 
     if (deletedFile) {
-      // Fetch all remaining files for the user after deletion
       const remainingFiles = await File.find({ userId });
       return res.status(200).json(remainingFiles);
     } else {

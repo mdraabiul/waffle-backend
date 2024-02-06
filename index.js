@@ -9,14 +9,7 @@ import router from "./appRoute.js";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "waffle-backend-git-main-md-rabiuls-projects.vercel.app",
-    methods: ["POST", "GET", "UPDATE", "DELETE"],
-    credentials: true,
-  })
-);
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(morgan("tiny"));
