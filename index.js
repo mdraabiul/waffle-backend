@@ -8,11 +8,7 @@ import db from "./db.js";
 import router from "./appRoute.js";
 
 const app = express();
-
-const corsOptions = {
-  origin: "http://127.0.0.1:5173",
-  
-};
+app.options('*', cors()) // 
 
 app.use(cors(corsOptions));
 
